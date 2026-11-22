@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Lauren, a Computer Science student at BINUS University focused on web development, UI/UX design, and computer vision.">
+  <title>Lauren | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">Lauren</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-toggle" id="themeToggle" aria-label="Switch between light and dark theme">Dark mode</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <p class="eyebrow">Hello, I am</p>
+        <h1>Lauren</h1>
+        <p class="tagline">Computer Science student building clean, accessible web experiences.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#projects">View my projects</a>
+          <a class="btn btn-outline" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <img class="hero-img" src="assets/profile.svg" alt="Illustration of a laptop showing code next to a coffee cup" width="320" height="320">
+    </section>
+
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <p>I am a Computer Science undergraduate at Bina Nusantara (BINUS) University. I enjoy turning ideas into usable products, from designing interfaces to writing the code behind them.</p>
+        <p>I am currently working as a UI/UX Designer and Web Developer intern, and my thesis explores computer vision for monitoring sports courts. I like learning new tools and building projects end to end.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>C#</li>
+        <li>UI/UX Design</li>
+        <li>Node.js</li>
+        <li>React</li>
+        <li>MongoDB</li>
+        <li>Git and GitHub</li>
+      </ul>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects by category">
+        <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="web" aria-pressed="false">Web</button>
+        <button class="filter" data-filter="app" aria-pressed="false">Console Apps</button>
+        <button class="filter" data-filter="ai" aria-pressed="false">Computer Vision</button>
+      </div>
+
+      <div class="cards">
+        <article class="card" data-category="web">
+          <img src="assets/project-web.svg" alt="Illustration of a gift box on a browser window" width="400" height="220" loading="lazy">
+          <div class="card-body">
+            <h3>GiftLink</h3>
+            <p>A full-stack gift sharing platform with a Node.js and Express API, MongoDB database, JWT authentication, and a React front end.</p>
+            <a class="link" href="https://kelvin-vin7.github.io/fullstack-capstone-project/">View live landing page</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="app">
+          <img src="assets/project-app.svg" alt="Illustration of a terminal window with a product list" width="400" height="220" loading="lazy">
+          <div class="card-body">
+            <h3>Inventory Management System</h3>
+            <p>A C# console application to add products, update stock after sales or restocks, view products, and remove items with input validation.</p>
+          </div>
+        </article>
+
+        <article class="card" data-category="app">
+          <img src="assets/project-library.svg" alt="Illustration of stacked books beside a terminal window" width="400" height="220" loading="lazy">
+          <div class="card-body">
+            <h3>Library Management System</h3>
+            <p>A C# console application with book search, a three-book borrowing limit, and checked-out flags to track availability.</p>
+          </div>
+        </article>
+
+        <article class="card" data-category="ai">
+          <img src="assets/project-ai.svg" alt="Illustration of a court with detection boxes around players" width="400" height="220" loading="lazy">
+          <div class="card-body">
+            <h3>Court Monitoring with Computer Vision</h3>
+            <p>Thesis project applying computer vision to monitor racket court occupancy, comparing detection models for player detection.</p>
+          </div>
+        </article>
+      </div>
+      <p class="no-results" id="noResults" hidden>No projects in this category yet.</p>
+    </section>
+
+    <section class="section alt" id="contact">
+      <h2>Contact</h2>
+      <p class="contact-intro">Have a question or an opportunity? Send me a message.</p>
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+          <span class="error" id="nameError" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <span class="error" id="emailError" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <span class="error" id="messageError" role="alert"></span>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+      <p class="social">Find me on <a href="https://github.com/Kelvin-vin7">GitHub</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Lauren. Built with HTML, CSS, and JavaScript.</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
